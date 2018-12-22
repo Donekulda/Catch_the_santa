@@ -10,4 +10,11 @@ ACatch_the_SantaGameMode::ACatch_the_SantaGameMode()
 	// use our custom PlayerController class
 	PlayerControllerClass = ACatch_the_SantaPlayerController::StaticClass();
 
+	// set default pawn class to our Blueprinted character
+	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/Characters/Catch_the_SantaCharacter_BP"));
+	if (PlayerPawnBPClass.Class != NULL)
+	{
+		DefaultPawnClass = PlayerPawnBPClass.Class;
+	}
+
 }

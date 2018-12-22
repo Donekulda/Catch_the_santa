@@ -31,9 +31,6 @@ void ACatch_the_SantaPlayerController::SetupInputComponent()
 
 	InputComponent->BindAction("SetDestination", IE_Pressed, this, &ACatch_the_SantaPlayerController::OnSetDestinationPressed);
 	InputComponent->BindAction("SetDestination", IE_Released, this, &ACatch_the_SantaPlayerController::OnSetDestinationReleased);
-
-
-
 }
 
 void ACatch_the_SantaPlayerController::MoveToMouseCursor()
@@ -68,11 +65,13 @@ void ACatch_the_SantaPlayerController::SetNewMoveDestination(const FVector DestL
 	if (MyPawn)
 	{
 		float const Distance = FVector::Dist(DestLocation, MyPawn->GetActorLocation());
+		UE_LOG(LogTemp, Warning, TEXT("Hit:%s Player:%s Distance:%f"), *DestLocation.ToString(), *MyPawn->GetActorLocation().ToString(), Distance);
 
 		// We need to issue move command only if far enough in order for walk animation to play correctly
 		if ((Distance > 120.0f))
 		{
 			UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, DestLocation);
+			UE_LOG(LogTemp, Warning, TEXT("moved"));
 		}
 	}
 }
