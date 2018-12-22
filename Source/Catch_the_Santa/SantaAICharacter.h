@@ -4,16 +4,19 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "SantaCharacter.generated.h"
+#include "SantaAICharacter.generated.h"
 
 UCLASS()
-class CATCH_THE_SANTA_API ASantaCharacter : public ACharacter
+class CATCH_THE_SANTA_API ASantaAICharacter : public ACharacter
 {
 	GENERATED_BODY()
 
+		UPROPERTY(EditAnywhere)
+		uint16 Health = 3;
+
 public:
 	// Sets default values for this character's properties
-	ASantaCharacter();
+	ASantaAICharacter();
 
 protected:
 	// Called when the game starts or when spawned
