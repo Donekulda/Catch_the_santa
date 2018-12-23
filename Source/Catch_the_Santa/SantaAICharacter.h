@@ -37,6 +37,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void looseHealth();
 
+	UFUNCTION(BlueprintCallable)
 	int GetHealth() { return Health; }
 	
 };
