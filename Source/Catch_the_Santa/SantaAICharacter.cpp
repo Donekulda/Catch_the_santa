@@ -19,6 +19,8 @@ void ASantaAICharacter::BeginPlay()
 	Super::BeginPlay();
 	
 	GameMode = Cast<ACatch_the_SantaGameMode>(GetWorld()->GetAuthGameMode());
+
+	Health = GameMode->GetMaxHealth();
 }
 
 // Called every frame
@@ -38,6 +40,7 @@ void ASantaAICharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 void ASantaAICharacter::looseHealth()
 {
 	Health--;
+	GameMode->setHealth(Health);
 	if (Health <= 0) {
 		bIsCatched = true;
 		GameMode->win();
