@@ -12,11 +12,10 @@ class ACatch_the_SantaGameMode : public AGameModeBase
 	GENERATED_BODY()
 
 	//Function thats called when its GameOver (Santa run away or got to the tree)
-	UFUNCTION(BlueprintPure)
+	UFUNCTION()
 	void GameOver();
 
 private:
-	ASantaAICharacter* Santa;
 
 public:
 	ACatch_the_SantaGameMode();

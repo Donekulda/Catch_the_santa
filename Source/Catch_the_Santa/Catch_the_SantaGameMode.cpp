@@ -28,8 +28,10 @@ void ACatch_the_SantaGameMode::Tick(float DeltaTime)
 
 void ACatch_the_SantaGameMode::win()
 {
+	UE_LOG(LogTemp, Warning, TEXT("You Won the GAME!!!"));
 }
 
 void ACatch_the_SantaGameMode::GameOver()
 {
+	UE_LOG(LogTemp, Warning, TEXT("You LOST!!!"));
 }
