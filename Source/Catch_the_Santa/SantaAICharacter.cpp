@@ -8,6 +8,8 @@ ASantaAICharacter::ASantaAICharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	
+	bIsCatched = false;
 
 }
 
@@ -30,5 +32,12 @@ void ASantaAICharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void ASantaAICharacter::looseHealth()
+{
+	Health--;
+	if (Health <= 0)
+		bIsCatched = true;
 }
 
