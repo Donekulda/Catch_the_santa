@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Catch_the_SantaGameMode.h"
 #include "GameFramework/Character.h"
 #include "SantaAICharacter.generated.h"
 
@@ -22,6 +23,10 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	bool bIsCatched;
+
+	ACatch_the_SantaGameMode* GameMode;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -29,8 +34,8 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	bool bIsCatched;
-
 	void looseHealth();
+
+	int GetHealth() { return Health; }
 	
 };
